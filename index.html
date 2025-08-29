@@ -7,14 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: "Warm Neutral Harmony" - A calming palette with a light beige background (#F5F5DC), warm gray text (#4A4A4A), deep blue for primary actions/headings (#003366), and a subtle gold accent (#D4AF37) for highlights and interactive states. -->
-    <!-- Application Structure Plan: A thematic, single-page dashboard structure was chosen over a linear slide format to promote user-driven exploration. The layout uses a main navigation bar to jump to four core sections: "Foundations," "Process," "Impact & Action," and "Roles." This allows users to either follow a logical flow or directly access information relevant to their immediate questions (e.g., a manager jumping to "Roles"). Key interactions include clickable process flow diagrams, hover-to-reveal details on role cards, and an interactive chart for impact assessment. This non-linear design enhances usability by empowering the user to control their learning path, making the content more digestible and accessible than a fixed presentation. -->
-    <!-- Visualization & Content Choices: 
-        - Report Info: Core Principles (Accountability, etc.) -> Goal: Inform -> Viz: Icon-based feature cards -> Interaction: Static display -> Justification: Clear, concise introduction to core concepts. -> Library/Method: HTML/Tailwind.
-        - Report Info: Escalation Process -> Goal: Organize/Change -> Viz: Interactive Flowchart Diagram -> Interaction: Clickable steps to reveal detailed descriptions -> Justification: Transforms a static process into an engaging, step-by-step exploration, improving comprehension and retention. -> Library/Method: HTML/Tailwind/JS.
-        - Report Info: Impact Ratings -> Goal: Compare -> Viz: Interactive Bar Chart -> Interaction: Hover over bars to see detailed descriptions -> Justification: Visualizes the hierarchy of risk more effectively than a list and provides immediate context on hover. -> Library/Method: Chart.js.
-        - Report Info: Roles & Responsibilities -> Goal: Organize -> Viz: Interactive Role Cards -> Interaction: Hover to reveal detailed responsibilities -> Justification: Presents a clean overview of all roles while allowing users to drill down into specifics without cluttering the initial view. -> Library/Method: HTML/Tailwind.
-        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -66,18 +58,6 @@
         .modal-container {
             transition: transform 0.3s ease;
         }
-        /* Quiz Styles */
-        .question-block {
-            border-left: 4px solid #E9ECEF;
-        }
-        .question-block.incorrect {
-            border-left-color: #DC3545;
-            background-color: #F8D7DA;
-        }
-        .question-block.correct {
-            border-left-color: #28A745;
-            background-color: #D4EDDA;
-        }
     </style>
 </head>
 <body class="antialiased">
@@ -90,7 +70,6 @@
                 <a href="#process" class="nav-link">The Process</a>
                 <a href="#impact" class="nav-link">Impact & Action</a>
                 <a href="#roles" class="nav-link">Roles & Responsibilities</a>
-                <a href="#knowledge-test" class="nav-link">Knowledge Test</a>
             </div>
         </nav>
     </header>
@@ -276,59 +255,8 @@
             </div>
         </section>
         
-        <section id="knowledge-test" class="mb-20">
-            <h2 class="text-3xl font-bold text-center mb-4 text-[#003366]">Knowledge Test</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12 text-center">Test your understanding of the Compliance Issue Management standard. You must be signed in to take the test. A score of 80% or higher is required to pass.</p>
-
-            <div id="test-container" class="bg-white p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
-                <div id="auth-section" class="text-center">
-                    <p id="auth-message" class="mb-4">Authenticating... Please wait.</p>
-                    
-                    <div id="user-info" class="hidden">
-                        <p class="mb-4">Welcome, <span id="user-name" class="font-semibold"></span>!</p>
-                        <p class="text-sm text-gray-600 mb-4">Your test attempts will be logged with the email: <span id="user-email" class="font-semibold"></span></p>
-                        <button id="start-test-btn" class="bg-green-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition-colors">Start Test</button>
-                    </div>
-
-                    <div id="anonymous-form" class="hidden">
-                        <p class="mb-4">Could not sign you in automatically. Please provide your details to log your test attempt.</p>
-                        <div class="max-w-sm mx-auto text-left">
-                            <div class="mb-4">
-                                <label for="anon-name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                                <input type="text" id="anon-name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#003366] focus:border-[#003366] sm:text-sm" placeholder="Jane Doe">
-                            </div>
-                            <div class="mb-4">
-                                <label for="anon-email" class="block text-sm font-medium text-gray-700">Work Email</label>
-                                <input type="email" id="anon-email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#003366] focus:border-[#003366] sm:text-sm" placeholder="jane.doe@example.com">
-                            </div>
-                        </div>
-                        <button id="start-anon-test-btn" class="mt-4 bg-green-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50" disabled>Start Test</button>
-                    </div>
-                </div>
-
-                <div id="quiz-section" class="hidden">
-                    <div id="quiz-questions"></div>
-                    <button id="submit-quiz-btn" class="mt-8 bg-[#003366] text-white font-bold py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors">Submit Answers</button>
-                </div>
-
-                <div id="results-section" class="hidden">
-                    <h3 class="text-2xl font-bold mb-4 text-center">Your Results</h3>
-                    <div id="score-container" class="text-center text-4xl font-bold mb-4"></div>
-                    <div id="pass-fail-message" class="text-center text-2xl font-semibold mb-8"></div>
-                    <div id="results-review">
-                         <h4 class="text-xl font-bold mb-4">Review Your Answers:</h4>
-                         <div id="review-container" class="space-y-4"></div>
-                    </div>
-                    <div class="text-center mt-8">
-                        <button id="retake-test-btn" class="bg-gray-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-600 transition-colors">Retake Test</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
     
-    <!-- Scenario Analyzer Modal -->
     <div id="scenarioModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 modal-overlay hidden opacity-0">
         <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl p-8 modal-container transform scale-95">
             <h2 class="text-2xl font-bold mb-4 text-[#003366]">✨ AI-Powered Scenario Analyzer</h2>
@@ -352,17 +280,7 @@
         </div>
     </footer>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        import { getAuth, onAuthStateChanged, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-        
-        const firebaseConfig = typeof __firebase_config !== 'undefined'
-            ? JSON.parse(__firebase_config)
-            : { /* FALLBACK CONFIG FOR LOCAL DEV */ };
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-link');
@@ -464,7 +382,7 @@
             const apiKey = ""; 
 
             async function callGemini(userPrompt, systemPrompt) {
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
                 
                 const payload = {
                     contents: [{ parts: [{ text: userPrompt }] }],
@@ -484,7 +402,7 @@
                         if (response.ok) {
                              const result = await response.json();
                              if (result.candidates && result.candidates.length > 0) {
-                                return result.candidates[0].content.parts[0].text;
+                                 return result.candidates[0].content.parts[0].text;
                              }
                         }
                     } catch (error) { console.error("Fetch error:", error); }
@@ -567,198 +485,8 @@
                 generatePlanBtn.disabled = false;
                 generatePlanBtn.textContent = 'Generate Draft Action Plan';
             });
-
-            // --- KNOWLEDGE TEST LOGIC ---
-            const authSection = document.getElementById('auth-section');
-            const authMessage = document.getElementById('auth-message');
-            const userInfoDiv = document.getElementById('user-info');
-            const anonFormDiv = document.getElementById('anonymous-form');
-            const quizSection = document.getElementById('quiz-section');
-            const resultsSection = document.getElementById('results-section');
-            
-            const startTestBtn = document.getElementById('start-test-btn');
-            const startAnonTestBtn = document.getElementById('start-anon-test-btn');
-            const submitQuizBtn = document.getElementById('submit-quiz-btn');
-            const retakeTestBtn = document.getElementById('retake-test-btn');
-            
-            let userState = { name: null, email: null };
-
-            const quizData = [
-                { question: "What is the primary responsibility of an employee regarding a potential compliance issue?", options: ["Fix it immediately", "Report it within 2 business days", "Discuss it with colleagues", "Wait for the manager's instruction"], answer: "Report it within 2 business days" },
-                { question: "Which of the following is considered a core principle of the compliance standard?", options: ["Profit Maximization", "Speed of Delivery", "Transparency", "Individual Recognition"], answer: "Transparency" },
-                { question: "An issue discovered from a regulatory body is automatically assigned what impact rating?", options: ["Low", "Moderate", "High", "It depends on the finding"], answer: "High" },
-                { question: "Who is ultimately responsible for developing and implementing an Action Plan?", options: ["The Employee who found the issue", "The Compliance Department", "The Issue Owner", "The Chief Compliance Officer"], answer: "The Issue Owner" },
-                { question: "Which group provides oversight and approves closures for high-risk, regulatory-related issues?", options: ["The Board of Directors", "The Audit Function", "The Legal Department", "The Risk and Governance Committee (RGC)"], answer: "The Risk and Governance Committee (RGC)" },
-                { question: "The 'First Line of Defense' in the compliance model refers to:", options: ["The Compliance Department", "The Business (All Employees)", "The Audit Function", "External Regulators"], answer: "The Business (All Employees)" },
-                { question: "What is NOT a required component of an Action Plan?", options: ["Clear Actions", "A budget for the fix", "Target Completion Date", "Addressing the Root Cause"], answer: "A budget for the fix" },
-                { question: "A 'compliance issue' is defined as a gap between our practices and what?", options: ["Industry best practices", "Competitor actions", "Laws, regulations, or policies", "Last quarter's performance"], answer: "Laws, regulations, or policies" },
-                { question: "The 'Third Line of Defense' is described as:", options: ["A management function", "A client-facing team", "An independent function", "A project-based team"], answer: "An independent function" },
-                { question: "Who is responsible for the final review and closure for most non-regulatory, non-audit issues?", options: ["The Issue Owner", "The person who found it", "The Compliance Department", "The RGC"], answer: "The Compliance Department" }
-            ];
-
-            function displayQuiz() {
-                const quizQuestionsContainer = document.getElementById('quiz-questions');
-                quizQuestionsContainer.innerHTML = '';
-                quizData.forEach((q, index) => {
-                    const questionEl = document.createElement('div');
-                    questionEl.className = 'mb-6';
-                    questionEl.innerHTML = `<p class="font-semibold mb-2">${index + 1}. ${q.question}</p><div class="space-y-2">${q.options.map((option, i) => `<div><input type="radio" id="q${index}o${i}" name="q${index}" value="${option}" class="mr-2"><label for="q${index}o${i}">${option}</label></div>`).join('')}</div>`;
-                    quizQuestionsContainer.appendChild(questionEl);
-                });
-            }
-
-            async function logTestAttempt(score, passed) {
-                 if (!userState.name || !userState.email) {
-                    console.error("User details not available. Cannot log attempt.");
-                    return;
-                }
-                
-                const sheetUrl = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
-                
-                if (sheetUrl === 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
-                    console.warn("Google Apps Script URL not set. Skipping log.");
-                    return;
-                }
-
-                const payload = {
-                    name: userState.name,
-                    email: userState.email,
-                    score: score,
-                    status: passed ? "Pass" : "Fail"
-                };
-
-                try {
-                    await fetch(sheetUrl, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                } catch (e) {
-                    console.error("Error logging to Google Sheet: ", e);
-                }
-            }
-
-            function showResults(score) {
-                const scoreContainer = document.getElementById('score-container');
-                const passFailMessage = document.getElementById('pass-fail-message');
-                const reviewContainer = document.getElementById('review-container');
-                const passRate = 80;
-                const passed = score >= passRate;
-
-                scoreContainer.textContent = `${score}%`;
-                scoreContainer.className = `text-center text-4xl font-bold mb-4 ${passed ? 'text-green-600' : 'text-red-600'}`;
-                passFailMessage.textContent = passed ? "Congratulations, you passed!" : "You did not pass. Please review the material and try again.";
-                passFailMessage.className = `text-center text-2xl font-semibold mb-8 ${passed ? 'text-green-600' : 'text-red-600'}`;
-                
-                reviewContainer.innerHTML = '';
-                const userAnswers = quizData.map((q, index) => document.querySelector(`input[name="q${index}"]:checked`)?.value || null);
-
-                quizData.forEach((q, index) => {
-                    const isCorrect = userAnswers[index] === q.answer;
-                    const questionBlock = document.createElement('div');
-                    questionBlock.className = `p-4 rounded-md question-block ${isCorrect ? 'correct' : 'incorrect'}`;
-                    
-                    let reviewHTML = `
-                        <p class="font-semibold">${index + 1}. ${q.question}</p>
-                        <p class="text-sm">Your answer: <span class="${isCorrect ? 'text-green-800' : 'text-red-800 font-bold'}">${userAnswers[index] || 'Not answered'}</span></p>
-                    `;
-
-                    if (passed && !isCorrect) {
-                        reviewHTML += `<p class="text-sm text-green-800 font-semibold">Correct answer: ${q.answer}</p>`;
-                    } else if (isCorrect) {
-                         reviewHTML = `<div class="p-4 rounded-md question-block correct"><p class="font-semibold">${index + 1}. ${q.question}</p><p class="text-sm">Your answer: <span class="text-green-800 font-semibold">${userAnswers[index]} (Correct)</span></p></div>`;
-                    }
-
-                    questionBlock.innerHTML = reviewHTML;
-                    reviewContainer.appendChild(questionBlock);
-                });
-
-                quizSection.classList.add('hidden');
-                resultsSection.classList.remove('hidden');
-                logTestAttempt(score, passed);
-            }
-            
-            onAuthStateChanged(auth, (user) => {
-                if (user && !user.isAnonymous && user.displayName) {
-                    userState.name = user.displayName;
-                    userState.email = user.email;
-                    authMessage.classList.add('hidden');
-                    anonFormDiv.classList.add('hidden');
-                    userInfoDiv.classList.remove('hidden');
-                    document.getElementById('user-name').textContent = user.displayName;
-                    document.getElementById('user-email').textContent = user.email;
-                } else if (user && user.isAnonymous) {
-                    authMessage.classList.add('hidden');
-                    userInfoDiv.classList.add('hidden');
-                    anonFormDiv.classList.remove('hidden');
-                } else {
-                    authMessage.textContent = "Authentication failed. Please refresh and try again.";
-                    userInfoDiv.classList.add('hidden');
-                    anonFormDiv.classList.add('hidden');
-                }
-            });
-
-            async function initializeAuth() {
-                try {
-                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                        await signInWithCustomToken(auth, __initial_auth_token);
-                    } else {
-                        await signInAnonymously(auth);
-                    }
-                } catch (error) {
-                    console.error("Authentication failed:", error);
-                    authMessage.textContent = "Authentication failed. Please refresh and try again.";
-                }
-            }
-
-            initializeAuth();
-
-            function startTheTest() {
-                authSection.classList.add('hidden');
-                resultsSection.classList.add('hidden');
-                displayQuiz();
-                quizSection.classList.remove('hidden');
-            }
-
-            startTestBtn.addEventListener('click', startTheTest);
-            startAnonTestBtn.addEventListener('click', () => {
-                userState.name = document.getElementById('anon-name').value.trim();
-                userState.email = document.getElementById('anon-email').value.trim();
-                startTheTest();
-            });
-            
-            const anonNameInput = document.getElementById('anon-name');
-            const anonEmailInput = document.getElementById('anon-email');
-            
-            function validateAnonForm() {
-                const name = anonNameInput.value.trim();
-                const email = anonEmailInput.value.trim();
-                const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-                startAnonTestBtn.disabled = !(name && isEmailValid);
-            }
-            anonNameInput.addEventListener('input', validateAnonForm);
-            anonEmailInput.addEventListener('input', validateAnonForm);
-
-
-            submitQuizBtn.addEventListener('click', () => {
-                let score = 0;
-                quizData.forEach((q, index) => {
-                    const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
-                    if (selectedOption && selectedOption.value === q.answer) score++;
-                });
-                showResults(Math.round((score / quizData.length) * 100));
-            });
-
-            retakeTestBtn.addEventListener('click', () => {
-                resultsSection.classList.add('hidden');
-                authSection.classList.remove('hidden');
-            });
-
         });
     </script>
 
 </body>
 </html>
-
-
