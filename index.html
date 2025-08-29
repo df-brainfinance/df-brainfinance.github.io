@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Compliance Issue Management Training</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8F9FA;
-            color: #343A40;
+            background-color: #f8f9fa;
+            color: #343a40;
         }
         .nav-link {
             transition: all 0.3s ease;
             border-bottom: 2px solid transparent;
         }
-        .nav-link.active, .nav-link:hover {
+        .nav-link.active,
+        .nav-link:hover {
             color: #003366;
             border-bottom-color: #003366;
         }
@@ -26,15 +30,16 @@
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         .process-step {
             cursor: pointer;
             transition: all 0.3s ease;
-            border-left: 4px solid #ADB5BD;
+            border-left: 4px solid #adb5bd;
         }
         .process-step.active {
-            background-color: #E9ECEF;
+            background-color: #e9ecef;
             border-left-color: #003366;
         }
         .role-card .details {
@@ -55,10 +60,11 @@
     </style>
 </head>
 <body class="antialiased">
-
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold text-[#003366]">Compliance Issue Management</h1>
+            <h1 class="text-xl font-bold text-[#003366]">
+                Compliance Issue Management
+            </h1>
             <div class="hidden md:flex space-x-8">
                 <a href="#foundations" class="nav-link active">Foundations</a>
                 <a href="#process" class="nav-link">The Process</a>
@@ -69,11 +75,17 @@
     </header>
 
     <main class="container mx-auto px-6 py-12">
-
         <section id="foundations" class="mb-20 text-center">
-            <h2 class="text-4xl font-bold mb-4 text-[#003366]">Your Guide to a Culture of Integrity</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">This training is our blueprint for handling compliance issues. It's designed to empower every employee with the knowledge to act responsibly and protect our company by fostering a culture of accountability and transparency.</p>
-            
+            <h2 class="text-4xl font-bold mb-4 text-[#003366]">
+                Your Guide to a Culture of Integrity
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+                This training is our blueprint for handling compliance issues.
+                It's designed to empower every employee with the knowledge to
+                act responsibly and protect our company by fostering a culture
+                of accountability and transparency.
+            </p>
+
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="card bg-white p-6 rounded-lg shadow">
                     <h3 class="font-bold text-xl mb-2 text-[#003366]">Accountability</h3>
@@ -95,8 +107,18 @@
         </section>
 
         <section id="process" class="mb-20">
-            <h2 class="text-3xl font-bold text-center mb-12 text-[#003366]">The Escalation Process: A Step-by-Step Guide</h2>
-             <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12 text-center">The issue management process follows a clear, structured path from discovery to closure. Your primary responsibility is timely reporting within **two business days**. Click on each step below to learn more about what happens at each stage and what is required.</p>
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#003366]">
+                The Escalation Process: A Step-by-Step Guide
+            </h2>
+            <p
+                class="text-lg text-gray-600 max-w-3xl mx-auto mb-12 text-center"
+            >
+                The issue management process follows a clear, structured path from
+                discovery to closure. Your primary responsibility is timely
+                reporting within <b>two business days</b>. Click on each step below
+                to learn more about what happens at each stage and what is
+                required.
+            </p>
             <div class="flex flex-col md:flex-row gap-8">
                 <div class="md:w-1/3">
                     <div id="step1" class="process-step p-4 mb-2 active">
@@ -114,9 +136,21 @@
                 </div>
                 <div class="md:w-2/3 bg-white p-8 rounded-lg shadow-lg">
                     <div id="step1-content">
-                        <h3 class="text-2xl font-bold mb-4 text-[#003366]">Discovery & Escalation</h3>
-                        <p class="mb-4">A compliance issue is any gap between our practices and laws, regulations, or policies. It can be an **Internal Mistake**, a **Customer Complaint**, or a **Regulatory Finding**.</p>
-                        <p class="mb-4 font-semibold">Your responsibility is to report any potential issue to the Compliance Department within <span class="text-[#003366]">2 business days</span> of discovery.</p>
+                        <h3 class="text-2xl font-bold mb-4 text-[#003366]">
+                            Discovery & Escalation
+                        </h3>
+                        <p class="mb-4">
+                            A compliance issue is any gap between our practices and
+                            laws, regulations, or policies. It can be an
+                            <b>Internal Mistake</b>, a <b>Customer Complaint</b>, or a
+                            <b>Regulatory Finding</b>.
+                        </p>
+                        <p class="mb-4 font-semibold">
+                            Your responsibility is to report any potential issue to the
+                            Compliance Department within
+                            <span class="text-[#003366]">2 business days</span> of
+                            discovery.
+                        </p>
                         <div class="bg-gray-100 p-4 rounded-md">
                             <h4 class="font-bold mb-2">Your escalation must include:</h4>
                             <ul class="list-disc list-inside text-gray-700">
@@ -130,16 +164,47 @@
                     </div>
                     <div id="step2-content" class="hidden">
                         <h3 class="text-2xl font-bold mb-4 text-[#003366]">Qualification</h3>
-                        <p class="mb-4">After you escalate an issue, the Compliance Department reviews the submission to determine if it officially qualifies as a compliance issue.</p>
-                        <p>This ensures that all reported items are properly assessed and directed to the correct channels for resolution, maintaining the integrity of our formal issue tracking system.</p>
+                        <p class="mb-4">
+                            After you escalate an issue, the Compliance Department reviews
+                            the submission to determine if it officially qualifies as a
+                            compliance issue.
+                        </p>
+                        <p>
+                            This ensures that all reported items are properly assessed and
+                            directed to the correct channels for resolution, maintaining
+                            the integrity of our formal issue tracking system.
+                        </p>
                     </div>
                     <div id="step3-content" class="hidden">
                         <h3 class="text-2xl font-bold mb-4 text-[#003366]">Closure</h3>
-                        <p class="mb-4">An issue is not closed until the fix has been validated. The approval path depends on the issue's origin:</p>
+                        <p class="mb-4">
+                            An issue is not closed until the fix has been validated. The
+                            approval path depends on the issue's origin:
+                        </p>
                         <ul class="list-none space-y-3">
-                            <li class="flex items-start"><span class="font-bold text-[#003366] w-32 shrink-0">Regulatory Issue:</span> Requires review and approval by the Risk and Governance Committee (RGC).</li>
-                            <li class="flex items-start"><span class="font-bold text-[#003366] w-32 shrink-0">Audit Function Issue:</span> The Audit Function must review and validate the fix.</li>
-                            <li class="flex items-start"><span class="font-bold text-[#003366] w-32 shrink-0">All Other Issues:</span> The Compliance Department is responsible for final review and closure.</li>
+                            <li class="flex items-start">
+                                <span
+                                    class="font-bold text-[#003366] w-32 shrink-0"
+                                    >Regulatory Issue:</span
+                                >
+                                Requires review and approval by the Risk and Governance
+                                Committee (GRC).
+                            </li>
+                            <li class="flex items-start">
+                                <span
+                                    class="font-bold text-[#003366] w-32 shrink-0"
+                                    >Audit Function Issue:</span
+                                >
+                                The Audit Function must review and validate the fix.
+                            </li>
+                            <li class="flex items-start">
+                                <span
+                                    class="font-bold text-[#003366] w-32 shrink-0"
+                                    >All Other Issues:</span
+                                >
+                                The Compliance Department is responsible for final review and
+                                closure.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -147,33 +212,62 @@
         </section>
 
         <section id="impact" class="mb-20">
-            <h2 class="text-3xl font-bold text-center mb-4 text-[#003366]">Impact Assessment & Action Plan</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12 text-center">Once an issue is qualified, it's assigned an impact rating to prioritize the response. The Issue Owner is then responsible for creating a robust Action Plan. Hover over the bars in the chart to see what each rating means.</p>
-            <div class="flex flex-col lg:flex-row gap-8 items-center">
+            <h2 class="text-3xl font-bold text-center mb-4 text-[#003366]">
+                Impact Assessment & Action Plan
+            </h2>
+            <p
+                class="text-lg text-gray-600 max-w-3xl mx-auto mb-12 text-center"
+            >
+                Once an issue is qualified, it's assigned an impact rating to
+                prioritize the response. The Issue Owner is then responsible for
+                creating a robust Action Plan. Hover over the bars in the chart to
+                see what each rating means.
+            </p>
+            <div
+                class="flex flex-col lg:flex-row gap-8 items-center"
+            >
                 <div class="lg:w-1/2 w-full">
                     <div class="chart-container">
                         <canvas id="impactChart"></canvas>
                     </div>
                 </div>
-                <div class="lg:w-1/2 w-full bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-[#003366]">Building an Action Plan</h3>
-                    <p class="mb-4">The **Issue Owner** is responsible for developing a detailed Action Plan. This plan is the roadmap to resolution and must be approved by the Compliance Department.</p>
+                <div
+                    class="lg:w-1/2 w-full bg-white p-8 rounded-lg shadow-lg"
+                >
+                    <h3 class="text-2xl font-bold mb-4 text-[#003366]">
+                        Building an Action Plan
+                    </h3>
+                    <p class="mb-4">
+                        The <b>Issue Owner</b> is responsible for developing a detailed
+                        Action Plan. This plan is the roadmap to resolution and must be
+                        approved by the Compliance Department.
+                    </p>
                     <div class="space-y-4">
                         <div class="p-4 bg-gray-50 rounded-md">
                             <h4 class="font-semibold">1. Define Clear Actions</h4>
-                            <p class="text-sm text-gray-600">Outline the specific steps that will be taken to fix the problem.</p>
+                            <p class="text-sm text-gray-600">
+                                Outline the specific steps that will be taken to fix the
+                                problem.
+                            </p>
                         </div>
                         <div class="p-4 bg-gray-50 rounded-md">
                             <h4 class="font-semibold">2. Assign an Action Owner</h4>
-                            <p class="text-sm text-gray-600">Designate a specific person responsible for completing each action.</p>
+                            <p class="text-sm text-gray-600">
+                                Designate a specific person responsible for completing each
+                                action.
+                            </p>
                         </div>
                         <div class="p-4 bg-gray-50 rounded-md">
                             <h4 class="font-semibold">3. Set a Target Completion Date</h4>
-                            <p class="text-sm text-gray-600">Establish a realistic deadline for the resolution.</p>
+                            <p class="text-sm text-gray-600">
+                                Establish a realistic deadline for the resolution.
+                            </p>
                         </div>
                         <div class="p-4 bg-gray-50 rounded-md">
                             <h4 class="font-semibold">4. Address the Root Cause</h4>
-                            <p class="text-sm text-gray-600">Ensure the plan fixes the underlying problem, not just the symptom.</p>
+                            <p class="text-sm text-gray-600">
+                                Make sure the plan includes steps to prevent recurrence.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -181,181 +275,160 @@
         </section>
 
         <section id="roles" class="mb-20">
-            <h2 class="text-3xl font-bold text-center mb-4 text-[#003366]">Roles & Responsibilities</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12 text-center">Our issue management framework operates on a three-lines-of-defense model. Everyone has a part to play in maintaining our compliance standards. Hover over each card to see the specific duties for each role.</p>
-            
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-center mb-6">The Three Lines of Defense</h3>
-                <div class="grid md:grid-cols-3 gap-4 text-center">
-                    <div class="bg-white p-6 rounded-lg border-t-4 border-[#003366]">
-                        <h4 class="font-bold text-xl">1st Line: The Business (You!)</h4>
-                        <p class="text-sm text-gray-600 mt-2">Responsible for identifying and escalating issues as they arise in daily operations.</p>
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#003366]">
+                Roles and Responsibilities
+            </h2>
+            <div
+                class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto"
+            >
+                <div
+                    class="role-card bg-white p-6 rounded-lg shadow hover:shadow-lg transition relative"
+                >
+                    <h3 class="font-bold text-xl mb-2 text-[#003366]">Employee</h3>
+                    <p>
+                        Responsible for identifying potential issues and escalating
+                        them promptly.
+                    </p>
+                    <div class="details mt-4 text-sm text-gray-600">
+                        <ul class="list-disc list-inside">
+                            <li>Report issues within 2 business days of discovery.</li>
+                            <li>Provide complete and accurate information.</li>
+                            <li>Support investigations as needed.</li>
+                        </ul>
                     </div>
-                    <div class="bg-white p-6 rounded-lg border-t-4 border-[#6c757d]">
-                        <h4 class="font-bold text-xl">2nd Line: Compliance</h4>
-                        <p class="text-sm text-gray-600 mt-2">Oversees and monitors the issue management process, providing guidance and validation.</p>
+                </div>
+                <div
+                    class="role-card bg-white p-6 rounded-lg shadow hover:shadow-lg transition relative"
+                >
+                    <h3 class="font-bold text-xl mb-2 text-[#003366]">Compliance Department</h3>
+                    <p>
+                        Qualifies issues, manages the central issue tracking system,
+                        and oversees closure.
+                    </p>
+                    <div class="details mt-4 text-sm text-gray-600">
+                        <ul class="list-disc list-inside">
+                            <li>Review escalations and confirm issue qualification.</li>
+                            <li>Coordinate with other departments and regulators.</li>
+                            <li>Approve final closure of all issues.</li>
+                        </ul>
                     </div>
-                    <div class="bg-white p-6 rounded-lg border-t-4 border-[#ADB5BD]">
-                        <h4 class="font-bold text-xl">3rd Line: Audit Function</h4>
-                        <p class="text-sm text-gray-600 mt-2">An independent function that validates our processes and internal controls.</p>
+                </div>
+                <div
+                    class="role-card bg-white p-6 rounded-lg shadow hover:shadow-lg transition relative"
+                >
+                    <h3 class="font-bold text-xl mb-2 text-[#003366]">Risk and Governance Committee (GRC)</h3>
+                    <p>
+                        Reviews and approves closure of regulatory issues.
+                    </p>
+                    <div class="details mt-4 text-sm text-gray-600">
+                        <ul class="list-disc list-inside">
+                            <li>Ensure regulatory compliance.</li>
+                            <li>Review high-impact issues.</li>
+                            <li>Approve remedial actions and closure.</li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-
-            <h3 class="text-2xl font-bold text-center mb-6">Key Roles in Focus</h3>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="role-card card bg-white p-6 rounded-lg shadow">
-                    <h4 class="font-bold text-xl text-[#003366]">Employee</h4>
-                    <p class="details mt-2 text-gray-600">Identifies and escalates potential compliance issues promptly.</p>
-                </div>
-                <div class="role-card card bg-white p-6 rounded-lg shadow">
-                    <h4 class="font-bold text-xl text-[#003366]">Issue Owner</h4>
-                    <p class="details mt-2 text-gray-600">Develops and implements the action plan to fix the issue.</p>
-                </div>
-                <div class="role-card card bg-white p-6 rounded-lg shadow">
-                    <h4 class="font-bold text-xl text-[#003366]">Action Owner</h4>
-                    <p class="details mt-2 text-gray-600">Completes specific tasks within the action plan on time.</p>
-                </div>
-                <div class="role-card card bg-white p-6 rounded-lg shadow">
-                    <h4 class="font-bold text-xl text-[#003366]">Compliance Dept.</h4>
-                    <p class="details mt-2 text-gray-600">Manages the overall process, tracks issues, and approves closures.</p>
-                </div>
-                <div class="role-card card bg-white p-6 rounded-lg shadow">
-                    <h4 class="font-bold text-xl text-[#003366]">Chief Compliance Officer</h4>
-                    <p class="details mt-2 text-gray-600">Ultimately responsible for the standard and its effective implementation.</p>
-                </div>
-                <div class="role-card card bg-white p-6 rounded-lg shadow">
-                    <h4 class="font-bold text-xl text-[#003366]">RGC</h4>
-                    <p class="details mt-2 text-gray-600">Provides oversight and approves high-risk and regulatory-related issue closures.</p>
                 </div>
             </div>
         </section>
 
+        <section id="three-lines" class="mb-20 max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8 text-[#003366]">The Three Lines of Defense</h2>
+            <p class="text-lg text-gray-700 mb-12">
+                Our compliance framework is supported by the <b>Three Lines of Defense</b> model, ensuring
+                robust oversight and accountability across the organization.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="font-bold text-xl mb-2 text-[#003366]">First Line</h3>
+                    <p class="text-gray-600">
+                        Operational management and staff who own and manage risks directly.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="font-bold text-xl mb-2 text-[#003366]">Second Line</h3>
+                    <p class="text-gray-600">
+                        Risk management and compliance functions that monitor and facilitate the implementation of effective risk management practices.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="font-bold text-xl mb-2 text-[#003366]">Third Line</h3>
+                    <p class="text-gray-600">
+                        Internal audit providing independent assurance.
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="bg-white border-t mt-12">
-        <div class="container mx-auto px-6 py-4 text-center text-gray-500">
-            <p>&copy; 2025 Your Company. All Rights Reserved. For Internal Training Purposes Only.</p>
-        </div>
-    </footer>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Navigation scroll highlighting
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 60) {
-                        current = section.getAttribute('id');
-                    }
+        // Process Steps toggle
+        const steps = ['step1', 'step2', 'step3'];
+        steps.forEach((step) => {
+            document.getElementById(step).addEventListener('click', () => {
+                steps.forEach((s) => {
+                    document.getElementById(s).classList.remove('active');
+                    document.getElementById(`${s}-content`).classList.add('hidden');
                 });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').includes(current)) {
-                        link.classList.add('active');
-                    }
-                });
+                document.getElementById(step).classList.add('active');
+                document.getElementById(`${step}-content`).classList.remove('hidden');
             });
-            
-            // Smooth scrolling for nav links
-            navLinks.forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
+        });
 
-            // Process steps interaction
-            const steps = document.querySelectorAll('.process-step');
-            const stepContents = document.querySelectorAll('[id$="-content"]');
+        // Impact Chart
+        const impactLabels = [
+            'Minimal Impact',
+            'Low Impact',
+            'Moderate Impact',
+            'Significant Impact',
+            'Severe Impact'
+        ];
+        const impactValues = [10, 20, 30, 25, 15];
+        const impactTooltips = [
+            'Minimal impact: Limited or no effect on operations.',
+            'Low impact: Minor disruption with little effect on compliance.',
+            'Moderate impact: Noticeable impact requiring moderate attention.',
+            'Significant impact: Major issues that require immediate attention.',
+            'Severe impact: Critical issues causing serious harm.'
+        ];
 
-            steps.forEach(step => {
-                step.addEventListener('click', () => {
-                    steps.forEach(s => s.classList.remove('active'));
-                    step.classList.add('active');
-
-                    const targetId = step.id + '-content';
-                    stepContents.forEach(content => {
-                        if (content.id === targetId) {
-                            content.classList.remove('hidden');
-                        } else {
-                            content.classList.add('hidden');
-                        }
-                    });
-                });
-            });
-
-            // Impact Chart
-            const ctx = document.getElementById('impactChart').getContext('2d');
-            const impactData = {
-                labels: ['Low', 'Low/Moderate', 'Moderate', 'Moderate/High', 'High'],
+        const ctx = document.getElementById('impactChart').getContext('2d');
+        const impactChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: impactLabels,
                 datasets: [{
-                    label: 'Impact Level',
-                    data: [1, 2, 3, 4, 5],
-                    backgroundColor: [
-                        'rgba(40, 167, 69, 0.7)',
-                        'rgba(108, 117, 125, 0.7)',
-                        'rgba(255, 193, 7, 0.7)',
-                        'rgba(253, 126, 20, 0.7)',
-                        'rgba(220, 53, 69, 0.7)'
-                    ],
-                    borderColor: [
-                        'rgba(40, 167, 69, 1)',
-                        'rgba(108, 117, 125, 1)',
-                        'rgba(255, 193, 7, 1)',
-                        'rgba(253, 126, 20, 1)',
-                        'rgba(220, 53, 69, 1)'
-                    ],
-                    borderWidth: 1
+                    label: 'Issue Count',
+                    data: impactValues,
+                    backgroundColor: '#003366'
                 }]
-            };
-            const impactTooltips = [
-                'Inconsequential risk. Requires minor action.',
-                'Minor risk due to a weakness. Requires timely action.',
-                'More than inconsequential risk due to a poorly designed control. Requires prompt action.',
-                'Meaningful risk due to an absent or failed control. Requires urgent action.',
-                'Significant risk (financial, legal, or reputational). Requires immediate action. Regulatory findings are automatically High Impact.'
-            ];
-
-            new Chart(ctx, {
-                type: 'bar',
-                data: impactData,
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    indexAxis: 'y',
-                    scales: {
-                        x: {
-                            display: false,
-                            beginAtZero: true
-                        },
-                        y: {
-                            grid: { display: false }
-                        }
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y', // horizontal bars
+                scales: {
+                    x: {
+                        display: false,
+                        beginAtZero: true
                     },
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return impactTooltips[context.dataIndex];
-                                }
+                    y: {
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return impactTooltips[context.dataIndex];
                             }
                         }
                     }
                 }
-            });
+            }
         });
     </script>
-
 </body>
 </html>
